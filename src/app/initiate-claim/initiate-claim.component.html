@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+
+<h3 class=" text-center" >Claim Initiation Form</h3>
+<div class="conatiner bg"  >
+ <br/> <br/> <br/> 
+
+<form [formGroup]="initiateClaimForm" (ngSubmit)="handleForm()" class="float-end">
+    <div class="container">
+        <label for="" class="text-white" >Patient Name</label>
+        <input formControlName="patientName" 
+        [class.is-invalid]="initiateClaimForm.get('patientName').invalid && initiateClaimForm.get('patientName').touched " 
+         class="form-control " > 
+         <div *ngIf="initiateClaimForm.get('patientName').invalid && initiateClaimForm.get('patientName').touched">
+            <small class="text-danger bg-light" *ngIf="initiateClaimForm.get('patientName').errors?.required"> PatientName is required</small>
+            <small class="text-warning" *ngIf="initiateClaimForm.get('patientName').errors?.minlength"> Name Should be minimum 4 characters</small>
+            <small class="text-warning" *ngIf="initiateClaimForm.get('patientName').errors?.maxlength"> Name Should be maximum 15 characters</small>
+          </div>
+    </div>
+    <div class="container">
+        <label for="" class="text-white">Ailment</label>
+        <select  name="ailment" formControlName="ailment"   class="form-control " 
+        [class.is-invalid]="initiateClaimForm.get('ailment').invalid && initiateClaimForm.get('ailment').touched ">
+         <option value="">--Select Ailment--</option>
+         <option value={{ailment}} *ngFor="let ailment of ailments">{{ailment}}</option>
+        </select>
+        <div *ngIf="initiateClaimForm.get('ailment').invalid && initiateClaimForm.get('ailment').touched">
+            <small class="text-white" *ngIf="initiateClaimForm.get('ailment').errors?.required"> Ailment is required</small>
+            </div>
+    </div>
+    <div class="container">
+        <label for="" class="text-white" >Treatment PackageName</label>
+        <select  name="treatmentPackageName" formControlName="treatmentPackageName"   class="form-control " 
+        [class.is-invalid]="initiateClaimForm.get('treatmentPackageName').invalid && initiateClaimForm.get('treatmentPackageName').touched ">
+            <option value="">--Select PackageName--</option>
+            <option value={{treatmentPackageName}} *ngFor="let treatmentPackageName of treatmentPackageNames">{{treatmentPackageName}}</option>
+        </select>
+        <div *ngIf="initiateClaimForm.get('treatmentPackageName').invalid && initiateClaimForm.get('treatmentPackageName').touched">
+            <small class="text-white" *ngIf="initiateClaimForm.get('treatmentPackageName').errors?.required"> Treatment PackageName is required</small>
+            </div>
+    </div>
+    <div class="container">
+        <label for="" class="text-white ">Insurer Name</label>
+        <select  name="insurerName" formControlName="insurerName"   class="form-control " 
+        [class.is-invalid]="initiateClaimForm.get('insurerName').invalid && initiateClaimForm.get('insurerName').touched ">
+            <option value="">--Select InsurerName--</option>
+            <option value={{insurerName}} *ngFor="let insurerName of insurerNames">{{insurerName}}</option>
+        </select>
+        <div *ngIf="initiateClaimForm.get('insurerName').invalid && initiateClaimForm.get('insurerName').touched">
+            <small class="text-white" *ngIf="initiateClaimForm.get('insurerName').errors?.required"> InsurerName is required</small>
+            </div>
+    </div>
+    <br/>
+         <button class="btn btn-primary " >Initiate</button> 
+  </form>
+</div>
+<br/>
+<div *ngIf="isInitiatedClaim;then thenBlock"></div>
+<ng-template #thenBlock>
+    <h4> {{balance}}</h4>
+</ng-template>
+
+<br>
+<br>
+</div>

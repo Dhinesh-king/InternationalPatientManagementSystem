@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+<h2>Give Details Of The Patient</h2>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="patientForm" >
+    <label>Ailment</label>
+    <input type="text" formControlName="ailment" name="ailment" id="ailment" [(ngModel)]="patient.ailment">
+    <small *ngIf="!patientForm.get('ailment').valid && patientForm.get('ailment').touched ">The Ailment is Invalid</small>
+    <br>
+    <label>Name</label>
+    <input type="text" name="name" formControlName="name" id="name" [(ngModel)]="patient.name">
+    <br>
+    <label>Treat Commencement Date (yyyy-mm-dd)</label>
+    <input type="text" name="treatmentCommencementDate" formControlName="treatmentCommencementDate" id="treatmentCommencementDate" [(ngModel)]="patient.treatmentCommencementDate">
+    <br>
+    <label>Treatment Package Name</label>
+    <input type="text" name="treatmentPackageName" formControlName="treatmentPackageName" id="treatmentPackageName" [(ngModel)]="patient.treatmentPackageName">
+    <br>
+    <label>Age</label>
+    <input type="text" name="age" formControlName="age" id="age" [(ngModel)]="patient.age">
+    <br>
+    <button type="submit"[disabled]="false">Submit</button>
+    <br>   
+    <p>{{patient.name}} this is your treatment plan details</p>
+    <br>
+    <h2>Treatment Plan</h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">TreatmentPlanId</th>
+                <th scope="col">PackageName</th>
+                <th scope="col">TestDetails</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Specialist</th>
+                <th scope="col">TreatmentCommencementDate</th>
+                <th scope="col">TreatmentEndDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{treatmentPlan.treatmentPlanId}}</td>
+                <td>{{treatmentPlan.packageName}}</td>
+                <td>{{treatmentPlan.testDetails}}</td>
+                <td>{{treatmentPlan.cost}}</td>
+                <td>{{treatmentPlan.specialist}}</td>
+                <td>{{treatmentPlan.treatmentCommencementDate}}</td>
+                <td>{{treatmentPlan.treatmentEndDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</form>
+<br>
+</div>

@@ -1,0 +1,91 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+    <h3 class=" text-dark">Insurer Details</h3>
+    <hr />
+    <br />
+    <table class="table table-bordered table-striped text-center table-hover ">
+        <thead class="text-uppercase bg-info ">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Ailment</th>
+                <th>Tretment Package Name</th>
+                <th>Treatment Commencement Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let patient of patientList' style="background-color:aliceblue;">
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.ailment}}</td>
+                <td>{{patient.treatmentPackageName}}</td>
+                <td>{{patient.treatmentCommencementDate}}</td>
+                <td>{{patient.status}}</td>
+                <button class="btn btn-warning" (click)="onEdit(patient.patientDetailId)">Edit</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container text-center">
+    <form (ngForm)='patientForm'>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Patient Id</td>
+                <td>
+                    <input name="patientDetailId" type="text" [(ngModel)]="patient.patientDetailId">
+                </td>
+            </tr>
+            <tr>
+                <td> Name</td>
+                <td>
+                    <input name="name" type="text" [(ngModel)]="patient.name">
+                </td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input name="age" type="text" [(ngModel)]="patient.age">
+                </td>
+            </tr>
+            <tr>
+                <td>Ailment</td>
+                <td>
+                    <input name="ailment" type="text" [(ngModel)]="patient.ailment">
+                </td>
+            </tr>
+            <tr>
+                <td>Package Name</td>
+                <td>
+                    <input name="patientDetailId" type="text" [(ngModel)]="patient.treatmentPackageName">
+                </td>
+            </tr>
+            <tr>
+                <td>Start Date</td>
+                <td>
+                    {{patient.TreatmentCommencementDate}}
+                    <!-- <input name="patientDetailId" type="text" [(ngModel)]="patient.TreatmentCommencementDate"> -->
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input name="patientDetailId" type="text" [(ngModel)]="patient.status">
+                </td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-warning" routerLink="/all-patients">Back</button></td>
+                <td><button class="btn btn-success" (click)="onUpdate()">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

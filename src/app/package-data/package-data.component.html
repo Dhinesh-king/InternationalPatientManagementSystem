@@ -1,0 +1,30 @@
+
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+<h2>List of International Patient Treatment Packages</h2>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">AilmentCategory</th>
+            <th scope="col">TreatmentPackageName</th>
+            <th scope="col">Testdeatils</th>
+            <th scope="col">Cost</th>
+            <th scope="col">TreatmentDuration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let inpatientServicePackage of inpatientServicePackages">
+            <td>{{inpatientServicePackage.ailmentCategory}}</td>
+            <td>{{inpatientServicePackage.treatmentPackageName}}</td>
+            <td>{{inpatientServicePackage.testdeatils}}</td>
+            <td>{{inpatientServicePackage.cost}}</td>
+            <td>{{inpatientServicePackage.treatmentduration}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>

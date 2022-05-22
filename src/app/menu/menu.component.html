@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">Patient Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ipTreatmentPackages">Package Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/specialists">Specialist Details</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Patient
+          </a>
+          <ul class="dropdown-menu " style="background-color: #e3f2fd;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/allPatients">All Patient Details</a></li>
+            <li><a class="dropdown-item" href="/addPatient">Add Patient</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item disabled" href="#">HI</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Insurance
+          </a>
+          <ul class="dropdown-menu " style="background-color: #e3f2fd;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/insurer-details">All Insurer Details</a></li>
+            <li><a class="dropdown-item" href="/initiate-claim">Initiate Claim</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item disabled" href="#">Edit Patient Data</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" (click)="logout()" type="button">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>

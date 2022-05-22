@@ -1,0 +1,55 @@
+<div class="container-fluid" style="align-items: center;" *ngIf="!isLogged">
+  <br>
+  <h1 class="text-center text-strong text-secondary">International Hospital Management System</h1>
+  <h3
+    style="text-align: center; padding-left: 50px; font-family: Helvetica; color: rgba(9, 44, 119, 0.959);font-size: 37px; font-weight: bold;">
+    Login to Continue</h3>
+  <br>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container" style="align-items: center; padding-left: 150px; padding-right: 75px;">
+      <div class="input-group mb-4" style="border-color: darkblue;">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          style="border-width: 10px;border-color:darkblue; background-color:darkblue;color: white;">USER NAME</span>
+        <input formControlName="username" name="pusername" type="text" required=true class="form-control" [(ngModel)]="loginData.username"
+          placeholder="Please enter your User Name">
+        <!-- <button class="btn btn-danger" type="reset" id="button-addon2">Delete</button> -->
+        <br>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default"
+          style="border-width: 10px;border-color:darkblue; background-color:darkblue;color: white;">PASSWORD</span>
+        <input formControlName="password" name="ppassword" type="text" required=true class="form-control" [(ngModel)]="loginData.password"
+          placeholder="Please enter your Password">
+        <!-- <button class="btn btn-danger" type="reset" id="button-addon2">Delete</button> -->
+      </div>
+      <div class="mb-3">
+        <div class="d-grid gap-2 col-3" style="align-items: center;">
+          <table class="table table-borderless" style="width: 500px;">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead><br>
+            <tbody>
+              <tr>
+                <th scope="row" style="padding-left: 175px;"></th>
+                <td><button type="submit" class="btn btn-success" routerLink="/"
+                    style="background-color: darkgreen; color:white; font-family: Helvetica;font-weight: bold; font-size: 17px;width: 200px;" [disabled]="!form.valid">LOGIN</button>
+                </td>
+                <td style="padding-left: 150px;"><button type="reset" class="btn btn-warning"
+                    style="width: 200px;font-family: Helvetica;font-weight: bold;font-size: 17px;">Reset Form</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container text-center" *ngIf="isLogged">
+  Successfully Logged in... 
+  <a class="btn btn-success nav-link" routerLink="/home">Home</a>
+</div>

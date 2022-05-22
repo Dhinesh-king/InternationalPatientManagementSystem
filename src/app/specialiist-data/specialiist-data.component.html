@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+<h2>List of Specialists</h2>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">SpecialistDetailId</th>
+            <th scope="col">Name</th>
+            <th scope="col">AreaOfExpertise</th>
+            <th scope="col">ExperienceInYears</th>
+            <th scope="col">ContactNumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let specialistDetail of specialistDetails">
+            <td>{{specialistDetail.specialistDetailId}}</td>
+            <td>{{specialistDetail.name}}</td>
+            <td>{{specialistDetail.areaOfExpertise}}</td>
+            <td>{{specialistDetail.experienceInYears}}</td>
+            <td>{{specialistDetail.contactNumber}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

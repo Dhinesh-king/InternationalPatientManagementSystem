@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="container">
+<h3 class=" text-dark" >Insurer Details</h3>
+<hr/>
+<br/>
+<table class="table table-bordered table-striped text-center table-hover ">
+    <thead class="text-uppercase bg-info ">
+        <tr>
+            <th>Insurer_Detail_Id</th>
+            <th>Insurer_Name</th>
+            <th>Insurer_Package_Name</th>
+            <th>Insurance_Amount_Limit</th>
+            <th>Disbursement_Duration</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let insurerDetail of insurers' style="background-color:aliceblue;" >
+            <td>{{insurerDetail.insurerDetailId}}</td>
+            <td>{{insurerDetail.insurerName}}</td>
+            <td>{{insurerDetail.insurerPackageName}}</td>
+            <td>{{insurerDetail.insuranceAmountLimit}}</td>
+            <td>{{insurerDetail.disbursementDuration}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

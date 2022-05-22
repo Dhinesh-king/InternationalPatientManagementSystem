@@ -1,0 +1,43 @@
+.bg {
+    /* The image used */
+    background-image: url("https://healthpayerintelligence.com/images/site/article_categories/Value_Based_Care.jpg");
+  
+    /* Full height */
+    height: 600px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .float-end{
+      
+    margin:3px auto;
+    width:400px;
+ }
+ .float-end.btn{
+  margin:3px auto;
+}
+ button.btn{
+   text-align-last: right;
+}
+select.form-control{
+  background-color:beige ;
+  
+}
+input.form-control{
+  background-color:beige ;
+}
+label.text-white{
+  font-size: larger;
+}
+form button.btn{
+  text-align-last: right;
+}
+
+
+ 
+
+ 
+  
+  
